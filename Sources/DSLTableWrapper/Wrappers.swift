@@ -27,6 +27,7 @@ public class DSLTable<T: UITableView> {
     public init(wrappedValue: T) {
         self.wrappedValue = wrappedValue
         self.projectedValue = ProjectedTableDataSourceDelegate(wrappedValue)
+        self.wrappedValue.delegate = projectedValue
         self.wrappedValue.dataSource = projectedValue
     }
     
